@@ -1,0 +1,44 @@
+.popup
+  position: absolute
+  background: #fff
+  box-shadow: 1px 1px 20px 1px #0000001c
+  top: 75px
+  right: 0
+  padding: 30px
+  border-radius: 30px
+  opacity: 0
+  visibility: hidden
+  &.show
+    visibility: visible
+    opacity: 1
+    z-index: 5
+  &__closeBtn
+    background: none
+    font-size: 35px
+    display: flex
+    position: absolute
+    top: 10px
+    right: 22px
+    color: #666
+    &:hover
+      color: #ffa42d
+  &-form
+    display: flex
+    flex-direction: column
+    padding-top: 23px
+    &__input
+      padding: 5px 10px 5px 0
+      background: none
+      border-bottom: 1px solid #f46235
+      margin-bottom: 15px
+      font-size: 14px
+      &::placeholder
+        font-size: 14px
+    &__btn
+      margin-top: 12px
+      background: linear-gradient(80deg, #ee3338 0%, #ffc32d 100%)
+      padding: 12px 0
+      border-radius: 40px
+      color: #fff
+      &:hover
+        color: #000
