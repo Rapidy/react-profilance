@@ -4,6 +4,9 @@
     &__item
       padding: 12px 20px
       border-bottom: 1px solid transparent
+      &.active
+        border-bottom: 1px solid #ee5f33
+        color: #ee5f33
       &:hover
         border-bottom: 1px solid #ee5f33
         color: #ee5f33
@@ -15,3 +18,10 @@
       padding: 12px 21px
       &:hover
         color: #000
+
+@media screen and (max-width: 390px)
+  .header
+    &-menu
+      width: 100%
+      display: flex
+      justify-content: space-between

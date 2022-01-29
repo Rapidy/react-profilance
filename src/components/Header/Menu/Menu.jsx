@@ -1,16 +1,21 @@
 import React from 'react';
 import './menu.sass';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { NavLink } from 'react-router-dom';
-import { setIsPopupVisible } from './../../../redux/actions/mainActions';
+import { setIsPopupVisible, setLogOut } from './../../../redux/actions/mainActions';
 
 export default function Menu() {
   const dispatch = useDispatch();
+  const isAuth = useSelector((state) => state.isAuth);
 
   function onClickOpenPopup() {
     dispatch(setIsPopupVisible(true));
+  }
+
+  function onClickLogOut() {
+    dispatch(setLogOut());
   }
 
   return (
@@ -21,9 +26,15 @@ export default function Menu() {
       <NavLink to='/news' className='header-menu__item'>
         Новости
       </NavLink>
-      <button onClick={onClickOpenPopup} className='header-menu__btn'>
-        Вход
-      </button>
+      {!isAuth ? (
+        <button onClick={onClickOpenPopup} className='header-menu__btn'>
+          Вход
+        </button>
+      ) : (
+        <button onClick={onClickLogOut} className='header-menu__btn'>
+          Выход
+        </button>
+      )}
     </nav>
   );
 }

@@ -5,9 +5,15 @@ export function setIsPopupVisible(boolean) {
   };
 }
 
-export function setLogin(login) {
+export function setLogIn(login) {
   return {
     type: 'SET_LOGIN',
     payload: login,
+  };
+}
+
+export function setLogOut() {
+  return {
+    type: 'SET_LOGOUT',
   };
 }

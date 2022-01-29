@@ -1,0 +1,28 @@
+.news
+  &-search
+    margin-bottom: 40px
+    &-wrapper
+      &__input
+        width: 300px
+        padding: 10px 20px
+        border-radius: 20px
+        border: 1px solid #fdb52e
+        font-size: 15px
+        &:focus
+          border: 1px solid #f46434
+  &-content
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-column-gap: 20px
+
+@media screen and (max-width: 650px)
+  .news
+    &-content
+      grid-template-columns: 1fr
+
+@media screen and (max-width: 480px)
+  .news
+    &-search
+      &-wrapper
+        &__input
+          width: calc(100% - 45px)
